@@ -20,13 +20,15 @@
 
                 <Label Grid.Row="0"
                        Grid.Column="0"
-                         Grid.ColumnSpan="4"
+                        Grid.ColumnSpan="4"
                        HeightRequest="70"
                        Margin="0,6"
-                       WidthRequest="400"
-                       HorizontalOptions="StartAndExpand"
-                       HorizontalTextAlignment="End"
+                       TextColor="Black"
                        BackgroundColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"                      
+                       Padding="2"
+                       FontSize="50"
                        x:Name="screen"
                        Text="screen"/>
                 <Button Grid.Row="1"
@@ -162,6 +164,8 @@ Text="x"/>
 
             </Grid>
         </VerticalStackLayout>
+
+     
     </ScrollView>
 
 </ContentPage>
