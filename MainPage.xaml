@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalc.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            WidthRequest="250"
+            HeightRequest="600"
+            Padding="30,0"
+            VerticalOptions="Center">            
+
+            <Grid RowDefinitions="1*,1*,1*,1*,1*"
+                  RowSpacing="2"
+                  ColumnSpacing="2"
+                  BackgroundColor="Purple"
+                  Padding="4"              
+                  ColumnDefinitions="1*,1*,1*,1*">
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                         Grid.ColumnSpan="4"
+                       HeightRequest="70"
+                       Margin="0,6"
+                       WidthRequest="400"
+                       HorizontalOptions="StartAndExpand"
+                       HorizontalTextAlignment="End"
+                       BackgroundColor="White"
+                       x:Name="screen"
+                       Text="screen"/>
+                <Button Grid.Row="1"
+                       Grid.Column="0"
+                        Clicked="OnExecuteCommand"
+        HorizontalOptions="StartAndExpand"
+        BackgroundColor="Blue"
+        TextColor="White"
+        x:Name="seven"
+        Text="7"/>
+                <Button Grid.Row="1"
+               Grid.Column="1"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="eight"
+Text="8"/>
+                <Button Grid.Row="1"
+               Grid.Column="2"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="nine"
+Text="9"/>
+                <Button Grid.Row="1"
+               Grid.Column="3"
+HorizontalOptions="StartAndExpand"
+BackgroundColor="Black"
+TextColor="White"
+Clicked="OnExecuteCommand"                        
+x:Name="add"
+Text="+"/>
+                <Button Grid.Row="2"
+               Grid.Column="0"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="four"
+Text="4"/>
+                <Button Grid.Row="2"
+               Grid.Column="1"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="five"
+Text="5"/>
+                <Button Grid.Row="2"
+               Grid.Column="2"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="six"
+Text="6"/>
+                <Button Grid.Row="2"
+               Grid.Column="3"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Black"
+TextColor="White"
+x:Name="divide"
+Text="/"/>
+
+                <Button Grid.Row="3"
+               Grid.Column="0"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="one"
+Text="1"/>
+                <Button Grid.Row="3"
+               Grid.Column="1"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="two"
+Text="2"/>
+                <Button Grid.Row="3"
+               Grid.Column="2"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="three"
+Text="3"/>
+                <Button Grid.Row="3"
+               Grid.Column="3"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Black"
+TextColor="White"
+x:Name="subtract"
+Text="-"/>
+                <Button Grid.Row="4"
+               Grid.Column="0"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="pointSep"
+Text="."/>
+                <Button Grid.Row="4"
+               Grid.Column="1"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="zeroInt"
+Text="0"/>
+                <Button Grid.Row="4"
+               Grid.Column="2"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Blue"
+TextColor="White"
+x:Name="goTo"
+Text="="/>
+                <Button Grid.Row="4"
+               Grid.Column="3"
+HorizontalOptions="StartAndExpand"
+Clicked="OnExecuteCommand"
+BackgroundColor="Black"
+TextColor="White"
+x:Name="multiply"
+Text="x"/>
+
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
