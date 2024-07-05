@@ -30,7 +30,7 @@
                        Padding="2"
                        FontSize="20"
                        x:Name="screen"
-                       Text="screen"/>
+                       Text="0"/>
 
                 <Label Grid.Row="6"
         Grid.Column="0"
@@ -186,7 +186,7 @@ Text="0"/>
                Grid.Column="2"
 HorizontalOptions="StartAndExpand"
 Clicked="OnGetAnswer"
-BackgroundColor="Blue"
+BackgroundColor="Orange"
 TextColor="White"
 x:Name="goTo"
 Text="="/>

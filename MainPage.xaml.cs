@@ -20,12 +20,15 @@
 
         private void OnGetAnswer(object sender, EventArgs e)
         {
+            if (screen.Text is string) {
+                screen.Text = "0";
+            }
             var numOne = Convert.ToDecimal(firstNumber.Text);
             var numTwo = Convert.ToDecimal(screen.Text);
             switch (mathsymbol)
             {
                 case "+":
-                    screen.Text = "add";
+                    screen.Text = Convert.ToString(numOne + numTwo);
                     break;
                 case "-":
                     screen.Text = Convert.ToString(Math.Abs(numOne - numTwo));
@@ -33,12 +36,11 @@
                 case "/":
                     screen.Text = Convert.ToString(numOne / numTwo);
                     break;
-                case "*":
+                case "x":
                     screen.Text = Convert.ToString(numOne * numTwo);
                     break;
-                default: screen.Text = "Fuck you"; break;
+                default: screen.Text = "NAN"; break;
             }
-            screen.Text = mathsymbol;
 
             selectedOperation.Text = goTo.Text;
 
