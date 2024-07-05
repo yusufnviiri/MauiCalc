@@ -4,38 +4,57 @@
     {
         int count = 0;
         string outPutData = "0";
-        List<string> buttons = new() { "3","5"};
-        string changer = "test";
+        string mathsymbol = string.Empty;
+        List<string> updateScreen = new List<string>();
+        List<string> selections = new List<string>();
+
+        string changer = "";
+        List<string> mathSymbols = new() { "+", "-", "/", "x" };
 
         public MainPage()
         {
             InitializeComponent();
-        }
-
-
-        
+        }        
              private void OnAllClear(object sender, EventArgs e)
         {
             screen.Text = string.Empty;
+            changer = "";
+           firstNumber.Text = string.Empty;
+
             SemanticScreenReader.Announce(screen.Text);
+            SemanticScreenReader.Announce(firstNumber.Text);
+
         }
 
         private void OnExecuteCommand(object sender, EventArgs e)
         {
+            updateScreen.Clear();
+            
             //screen.Text= add.Text ;
             if (sender is Button Button)
             {
-                foreach (string button in buttons)
+
+                //selections.Add(Button.Text);
+                //updateScreen = selections;
+                string mathOperation = mathSymbols.Where(p => p == Button.Text).FirstOrDefault();
+                if (mathOperation == null)
                 {
-                    changer = changer + button;
+
+                    screen.Text = changer + Button.Text;
+                    changer = screen.Text;
                 }
-
-
-                screen.Text = Button.Text + changer;
+                else
+                {
+                    mathsymbol = mathOperation;
+                    firstNumber.Text = screen.Text;
+                    selectedOperation.Text = mathsymbol;
+                    screen.Text = "";
+                    changer = "";
+                }
             }
 
 
-                SemanticScreenReader.Announce(screen.Text);
+            SemanticScreenReader.Announce(screen.Text);
         }
     }
 

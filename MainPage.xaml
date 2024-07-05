@@ -11,7 +11,7 @@
             Padding="30,0"
             VerticalOptions="Center">            
 
-            <Grid RowDefinitions="1*,1*,1*,1*,1*,1*"
+            <Grid RowDefinitions="1*,1*,1*,1*,1*,1*,1*"
                   RowSpacing="2"
                   ColumnSpacing="2"
                   BackgroundColor="Purple"
@@ -31,6 +31,34 @@
                        FontSize="20"
                        x:Name="screen"
                        Text="screen"/>
+
+                <Label Grid.Row="6"
+        Grid.Column="0"
+         Grid.ColumnSpan="2"
+        HeightRequest="70"
+        Margin="0,6"
+        TextColor="Black"
+        BackgroundColor="Yellow"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"                      
+        Padding="2"
+        FontSize="20"
+        x:Name="firstNumber"
+        Text="0"/>
+
+                <Label Grid.Row="6"
+Grid.Column="2"
+ Grid.ColumnSpan="2"
+HeightRequest="70"
+Margin="0,6"
+TextColor="NavajoWhite"
+BackgroundColor="Green"
+HorizontalTextAlignment="Center"
+VerticalTextAlignment="Center"                      
+Padding="2"
+FontSize="20"
+x:Name="selectedOperation"
+Text="0"/>
 
                 <Button Grid.Row="5"
                        Grid.Column="0"
