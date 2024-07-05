@@ -14,15 +14,49 @@
         public MainPage()
         {
             InitializeComponent();
-        }        
-             private void OnAllClear(object sender, EventArgs e)
-        {
-            screen.Text = string.Empty;
-            changer = "";
-           firstNumber.Text = string.Empty;
+        }
 
-            SemanticScreenReader.Announce(screen.Text);
-            SemanticScreenReader.Announce(firstNumber.Text);
+
+
+        private void OnGetAnswer(object sender, EventArgs e)
+        {
+            var numOne = Convert.ToDecimal(firstNumber.Text);
+            var numTwo = Convert.ToDecimal(screen.Text);
+            switch (mathsymbol)
+            {
+                case "+":
+                    screen.Text = "add";
+                    break;
+                case "-":
+                    screen.Text = Convert.ToString(Math.Abs(numOne - numTwo));
+                    break;
+                case "/":
+                    screen.Text = Convert.ToString(numOne / numTwo);
+                    break;
+                case "*":
+                    screen.Text = Convert.ToString(numOne * numTwo);
+                    break;
+                default: screen.Text = "Fuck you"; break;
+            }
+            screen.Text = mathsymbol;
+
+            selectedOperation.Text = goTo.Text;
+
+        }
+
+
+
+
+                private void OnAllClear(object sender, EventArgs e) {
+            {
+                screen.Text = string.Empty;
+                changer = "";
+                firstNumber.Text = string.Empty;
+
+                SemanticScreenReader.Announce(screen.Text);
+                SemanticScreenReader.Announce(firstNumber.Text);
+            }
+
 
         }
 
@@ -34,23 +68,24 @@
             if (sender is Button Button)
             {
 
-                //selections.Add(Button.Text);
-                //updateScreen = selections;
-                string mathOperation = mathSymbols.Where(p => p == Button.Text).FirstOrDefault();
-                if (mathOperation == null)
-                {
 
-                    screen.Text = changer + Button.Text;
-                    changer = screen.Text;
-                }
-                else
-                {
-                    mathsymbol = mathOperation;
-                    firstNumber.Text = screen.Text;
-                    selectedOperation.Text = mathsymbol;
-                    screen.Text = "";
-                    changer = "";
-                }
+               
+                    string mathOperation = mathSymbols.Where(p => p == Button.Text).FirstOrDefault();
+                    if (mathOperation == null)
+                    {
+
+                        screen.Text = changer + Button.Text;
+                        changer = screen.Text;
+                    }
+                    else
+                    {
+                        mathsymbol = mathOperation;
+                        firstNumber.Text = screen.Text;
+                        selectedOperation.Text = mathsymbol;
+                        screen.Text = "";
+                        changer = "";
+                    }
+                
             }
 
 
